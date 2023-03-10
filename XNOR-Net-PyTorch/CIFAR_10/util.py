@@ -56,7 +56,7 @@ class BinOp():
             m = self.target_modules[index].data.norm(1, 3, keepdim=True)\
                     .sum(2, keepdim=True).sum(1, keepdim=True).div(n)
             self.target_modules[index].data = \
-                    self.target_modules[index].data.sign().mul(m.expand(s))
+                    self.target_modules[index].data.sign()#.mul(m.expand(s))
 
     def restore(self):
         for index in range(self.num_of_params):
